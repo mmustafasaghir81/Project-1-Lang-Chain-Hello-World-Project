@@ -109,4 +109,4 @@ print("Answer:", response)
 ## 🚀 **Result Below**
 
 ### **Answer**:
-LangChain is a web-based platform that facilitates language learning through collaborative translation. It connects learners of different languages who help each other translate texts, providing feedback and corrections along the way. This interactive approach aims to enhance language proficiency, cultural understanding, and global collaboration.
+LangChain is a decentralized protocol that connects translators and requesters on blockchain technology. It provides a secure and transparent platform for translation services, utilizing blockchain to ensure authenticity, accuracy, and timely delivery of translations.
