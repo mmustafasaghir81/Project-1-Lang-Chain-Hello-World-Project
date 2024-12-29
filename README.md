@@ -52,15 +52,18 @@ genai.configure(api_key=GEMINI_API_KEY)
 Define a custom class GeminiLLM that inherits from LLM and specifies the behavior for interacting with the Gemini model.
 
 ```bash
+from typing import Optional, List, ClassVar  # Import ClassVar
+
 class GeminiLLM(LLM):
-    model = "gemini-pro"
-    temperature = 0.7
+    model: ClassVar[str] = "gemini-pro"  # Annotate model with ClassVar[str]
+    temperature: ClassVar[float] = 0.7  # Annotate temperature with ClassVar[float]
+
     @property
     def _llm_type(self) -> str:
         return "google_gemini"
+
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
-        return genai.GenerativeModel(self.model).generate_content
-        (prompt, generation_config={"temperature": self.temperature}).text
+        return genai.GenerativeModel(self.model).generate_content(prompt, generation_config={"temperature": self.temperature}).text
 
 
 
